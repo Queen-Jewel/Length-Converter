@@ -39,6 +39,10 @@ const myResult = () => {
         result.value = input.value;
     }
 
+    const mainResult = result.value;
+
+    console.log(mainResult);
+
 } 
 
 input.addEventListener('keyup', myResult);
