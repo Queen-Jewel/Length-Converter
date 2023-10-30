@@ -1,15 +1,17 @@
-const input = document.getElementById('input');
-const result = document.getElementById('result');
-const inputType = document.getElementById('inputType');
-const resultType = document.getElementById('resultType');
+let input = document.getElementById('input');
+let result = document.getElementById('result');
+let inputType = document.getElementById('inputType');
+let resultType = document.getElementById('resultType');
+let inputTypeValue, resultTypeValue;
 
+input.addEventListener('keyup', myResult);
+inputType.addEventListener('change', myResult);
+resultType.addEventListener('change', myResult);
 
+     inputTypeValue = inputType.value;
+     resultTypeValue = resultType.value;
 
-    let inputTypeValue = inputType.value;
-    let resultTypeValue = resultType.value;
-
-
-const myResult = () => {
+let myResult = () => {
    let inputTypeValue = inputType.value;
    let resultTypeValue = resultType.value;
 
@@ -33,18 +35,15 @@ const myResult = () => {
     
     if(inputTypeValue === 'centimeter' && resultTypeValue === 'kilometer'){
         result.value = Number(input.value) * 0.0001;
-    } else if (inputTypeValue === 'centimeter' && resultTypeValue === 'centimeter'){
+    } else if (inputTypeValue === 'centimeter' && resultTypeValue === 'meter'){
         result.value = Number(input.value) * 0.1;
     } else if (inputTypeValue === 'centimeter' && resultTypeValue === 'centimeter'){
         result.value = input.value;
     }
 
-    const mainResult = result.value;
+    // const mainResult = result.value;
 
-    console.log(mainResult);
+    // console.log(mainResult);
 
 } 
 
-input.addEventListener('keyup', myResult);
-inputType.addEventListener('change', myResult);
-resultType.addEventListener('change', myResult);
